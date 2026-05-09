@@ -5,15 +5,16 @@ import { SiteFooter } from "@/components/SiteFooter";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Voltrix" },
+      { title: "Contact — Saunders & Associates" },
       {
         name: "description",
-        content: "Request a PCB quote or instrument demo. Voltrix engineers reply within one business day.",
+        content:
+          "Contact Saunders & Associates in Phoenix, Arizona. Phone (602) 971-9977. Engineering and sales support for crystal test and production systems.",
       },
-      { property: "og:title", content: "Contact — Voltrix" },
+      { property: "og:title", content: "Contact — Saunders & Associates" },
       {
         property: "og:description",
-        content: "Request a PCB quote or instrument demo from Voltrix engineers.",
+        content: "Sales and engineering support from S&A in Phoenix, Arizona.",
       },
     ],
   }),
@@ -28,40 +29,44 @@ function ContactPage() {
         <div className="grid gap-12 md:grid-cols-[1.1fr_1fr]">
           <div>
             <div className="text-mono text-[10px] uppercase tracking-[0.25em] text-primary">
-              // talk to engineering
+              // get in touch
             </div>
-            <h1 className="text-display mt-2 text-5xl font-bold tracking-tight md:text-6xl">
-              Send us your spec.
+            <h1 className="text-display mt-2 text-5xl font-bold tracking-tight text-primary md:text-6xl">
+              Talk to S&amp;A engineering.
             </h1>
             <p className="mt-4 max-w-md text-muted-foreground">
-              Gerbers, BOMs, test-bench requirements — give us the details and a real engineer
-              will respond within one business day.
+              Whether you need a quote, application support, or service for an installed system —
+              our team in Phoenix is here to help.
             </p>
 
             <dl className="text-mono mt-10 space-y-5 text-sm">
               <div>
                 <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                  Sales
+                  Address
                 </dt>
-                <dd className="mt-1 text-primary">sales@voltrix.io</dd>
-              </div>
-              <div>
-                <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                  Support
-                </dt>
-                <dd className="mt-1 text-primary">support@voltrix.io</dd>
+                <dd className="mt-1">
+                  Saunders &amp; Associates, LLC<br />
+                  2520 East Rose Garden Lane<br />
+                  Phoenix, Arizona 85050 USA
+                </dd>
               </div>
               <div>
                 <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
                   Phone
                 </dt>
-                <dd className="mt-1">+1 (415) 555 · 0142</dd>
+                <dd className="mt-1 text-primary">(602) 971-9977</dd>
               </div>
               <div>
                 <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                  Facility
+                  Fax
                 </dt>
-                <dd className="mt-1">2204 Industrial Pkwy, Fremont, CA 94538</dd>
+                <dd className="mt-1">(602) 971-5522</dd>
+              </div>
+              <div>
+                <dt className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                  Hours
+                </dt>
+                <dd className="mt-1">Mon–Fri · 8:00 AM – 5:00 PM MST</dd>
               </div>
             </dl>
           </div>
@@ -69,7 +74,7 @@ function ContactPage() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              alert("Thanks — we'll be in touch within 1 business day.");
+              alert("Thank you — an S&A representative will contact you shortly.");
             }}
             className="panel rounded-md p-6 md:p-8"
           >
@@ -79,30 +84,31 @@ function ContactPage() {
               <Field label="Email" name="email" type="email" />
               <div>
                 <label className="text-mono mb-2 block text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                  Project type
+                  Inquiry type
                 </label>
                 <select className="text-mono w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none">
-                  <option>PCB fabrication quote</option>
-                  <option>Instrument purchase</option>
-                  <option>Custom engineering</option>
-                  <option>Calibration service</option>
+                  <option>Sales / quote request</option>
+                  <option>Technical support</option>
+                  <option>Service &amp; calibration</option>
+                  <option>Datasheet request</option>
+                  <option>General inquiry</option>
                 </select>
               </div>
               <div>
                 <label className="text-mono mb-2 block text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                  Details
+                  Message
                 </label>
                 <textarea
                   rows={5}
                   className="text-mono w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
-                  placeholder="Layer count, quantity, target spec…"
+                  placeholder="Device type, frequency range, application…"
                 />
               </div>
               <button
                 type="submit"
                 className="text-mono mt-2 rounded-sm bg-primary px-5 py-3 text-xs uppercase tracking-widest text-primary-foreground transition-all hover:glow-signal"
               >
-                Transmit request →
+                Send to S&amp;A →
               </button>
             </div>
           </form>

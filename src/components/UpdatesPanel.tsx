@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 type Update = {
   date: string;
-  tag: "NEW PRODUCT" | "FIRMWARE" | "ANNOUNCEMENT" | "RELEASE";
+  tag: "NEW PRODUCT" | "SOFTWARE" | "ANNOUNCEMENT" | "MILESTONE";
   title: string;
   body: string;
 };
@@ -11,27 +11,27 @@ type Update = {
 const updates: Update[] = [
   {
     date: "2026-05-08",
-    tag: "NEW PRODUCT",
-    title: "VX-7204 · 4 GHz Mixed-Signal Oscilloscope",
-    body: "12-bit ADC, 16 logic channels, and a 15.6\" HD touch display. Now shipping worldwide.",
+    tag: "SOFTWARE",
+    title: "Windows 11 Support Now Available — 250B Network Analyzer",
+    body: "All 250-series PCIe network analyzers are now fully qualified on Windows 11. Free upgrade for existing customers.",
   },
   {
     date: "2026-04-22",
-    tag: "FIRMWARE",
-    title: "Bench Suite v3.1 — Remote Capture",
-    body: "Stream waveforms over LAN to any browser. Free update for all VX-series instruments.",
+    tag: "MILESTONE",
+    title: "Over 12,000 250-Series Analyzers Sold Worldwide",
+    body: "Thank you to our customers across 40+ countries. The 250B remains the de facto industry standard for crystal measurement.",
   },
   {
     date: "2026-04-03",
-    tag: "RELEASE",
-    title: "HDI Stack-up: 14-layer rigid-flex now available",
-    body: "Production line 3 expanded for high-density interconnect with 50µm trace/space.",
+    tag: "NEW PRODUCT",
+    title: "Dual-Channel W-5910 Temperature Test System",
+    body: "Doubled throughput with 100% electronic switching and 10 ppb frequency resolution — now in production.",
   },
   {
     date: "2026-03-15",
     tag: "ANNOUNCEMENT",
-    title: "Embedded World 2026 — Booth H4-211",
-    body: "Demo our new RF measurement platform live. Schedule a 1:1 with our engineers.",
+    title: "W-2220MR Multi-Resonator Test Head Released",
+    body: "Test multiple resonator types on a single fixture. Datasheet and ordering information now available.",
   },
 ];
 
@@ -41,11 +41,7 @@ export function UpdatesPanel() {
 
   useEffect(() => {
     const tick = () =>
-      setTime(
-        new Date().toLocaleTimeString("en-US", { hour12: false }) +
-          " UTC" +
-          new Date().toString().match(/GMT([+-]\d{2})/)?.[1],
-      );
+      setTime(new Date().toLocaleTimeString("en-US", { hour12: false }) + " MST");
     tick();
     const i = setInterval(tick, 1000);
     const rotate = setInterval(() => setActive((a) => (a + 1) % updates.length), 6000);
@@ -69,7 +65,7 @@ export function UpdatesPanel() {
               <div className="h-2.5 w-2.5 rounded-full bg-primary blink" />
             </div>
             <span className="text-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-              voltrix · broadcast feed
+              S&amp;A · news &amp; product updates
             </span>
           </div>
           <span className="text-mono text-[10px] tracking-widest text-muted-foreground">
@@ -77,7 +73,7 @@ export function UpdatesPanel() {
           </span>
         </div>
 
-        <div className="grid gap-0 md:grid-cols-[1fr_280px]">
+        <div className="grid gap-0 md:grid-cols-[1fr_300px]">
           {/* Active update */}
           <div className="relative overflow-hidden p-8">
             <div className="bg-grid-fine absolute inset-0 opacity-40" />
@@ -112,7 +108,7 @@ export function UpdatesPanel() {
                 <button
                   onClick={() => setActive(i)}
                   className={`group flex w-full items-start gap-3 border-b border-border/60 px-4 py-3 text-left transition-colors last:border-b-0 ${
-                    i === active ? "bg-primary/5" : "hover:bg-secondary/40"
+                    i === active ? "bg-primary/5" : "hover:bg-secondary/60"
                   }`}
                 >
                   <span

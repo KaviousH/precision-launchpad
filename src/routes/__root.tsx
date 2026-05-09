@@ -72,14 +72,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Saunders & Associates — Quartz Crystal Test & Production Systems" },
+      {
+        name: "description",
+        content:
+          "S&A is the industry leader in frequency adjustment, measurement, and test of frequency control devices. Phoenix, Arizona — supporting manufacturers for over 50 years.",
+      },
+      { name: "author", content: "Saunders & Associates, LLC" },
+      { property: "og:title", content: "Saunders & Associates — Frequency Control Test Systems" },
+      {
+        property: "og:description",
+        content:
+          "Pioneers of quartz crystal measurement. 250-series network analyzers, frequency adjustment, temperature test, and automatic test systems.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

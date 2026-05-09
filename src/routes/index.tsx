@@ -10,16 +10,17 @@ import { UpdatesPanel } from "@/components/UpdatesPanel";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Voltrix — Precision PCB & Test Instruments" },
+      { title: "Saunders & Associates — Quartz Crystal Test & Production Systems" },
       {
         name: "description",
         content:
-          "Voltrix designs and manufactures multilayer circuit boards and calibrated measurement instruments for engineers who demand precision.",
+          "S&A is the industry leader in frequency adjustment, measurement, and test of frequency control devices. Phoenix, Arizona — supporting manufacturers for over 50 years.",
       },
-      { property: "og:title", content: "Voltrix — Precision PCB & Test Instruments" },
+      { property: "og:title", content: "Saunders & Associates — Frequency Control Test Systems" },
       {
         property: "og:description",
-        content: "Multilayer PCB fabrication and benchtop test equipment, engineered in-house.",
+        content:
+          "Pioneers of quartz crystal measurement. 250-series network analyzers, frequency adjustment, temperature test, and automatic test systems.",
       },
     ],
   }),
@@ -44,49 +45,48 @@ function Home() {
 function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border">
-      <div className="bg-grid absolute inset-0 opacity-30" />
+      <div className="bg-grid absolute inset-0 opacity-50" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background" />
 
       <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[1.1fr_1fr] md:py-28">
         <div className="flex flex-col justify-center">
-          <div className="text-mono inline-flex w-fit items-center gap-2 rounded-sm border border-border bg-secondary/50 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+          <div className="text-mono inline-flex w-fit items-center gap-2 rounded-sm border border-border bg-secondary px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
             <span className="h-1.5 w-1.5 rounded-full bg-primary blink" />
-            Est. 2008 · Fremont, CA
+            Est. 1967 · Phoenix, Arizona
           </div>
-          <h1 className="text-display mt-6 text-5xl font-bold leading-[0.95] tracking-tight md:text-7xl">
-            Signals you can{" "}
+          <h1 className="text-display mt-6 text-5xl font-bold leading-[0.95] tracking-tight text-primary md:text-7xl">
+            The standard for{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              trust
+              frequency
             </span>
-            .
             <br />
-            Boards you can ship.
+            control measurement.
           </h1>
           <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-            Voltrix builds multilayer PCBs and calibrated test instruments under one roof —
-            so the hardware you design and the gear you measure with come from the same
-            engineering culture.
+            Saunders &amp; Associates designs and manufactures test and production systems
+            for quartz resonators, oscillators, ceramic resonators, filters, MEMs, and
+            capacitors — trusted by manufacturers worldwide for over 50 years.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/products"
               className="text-mono rounded-sm bg-primary px-5 py-3 text-xs uppercase tracking-widest text-primary-foreground transition-all hover:glow-signal"
             >
-              Browse instruments →
+              View product line →
             </Link>
             <Link
               to="/contact"
-              className="text-mono rounded-sm border border-border bg-secondary/40 px-5 py-3 text-xs uppercase tracking-widest text-foreground transition-colors hover:border-primary hover:text-primary"
+              className="text-mono rounded-sm border border-border bg-background px-5 py-3 text-xs uppercase tracking-widest text-foreground transition-colors hover:border-primary hover:text-primary"
             >
-              Request PCB quote
+              Talk to an engineer
             </Link>
           </div>
 
           <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8">
             {[
-              ["18+", "Years in fab"],
-              ["50µm", "Min. trace/space"],
-              ["±0.02%", "Cal. accuracy"],
+              ["50+", "Years in industry"],
+              ["12,000+", "Analyzers shipped"],
+              ["10 ppb", "Frequency resolution"],
             ].map(([v, l]) => (
               <div key={l}>
                 <dt className="text-display text-3xl font-bold text-primary">{v}</dt>
@@ -102,20 +102,20 @@ function Hero() {
           <div className="panel relative overflow-hidden rounded-md">
             <img
               src={heroImg}
-              alt="Macro photograph of a Voltrix multilayer PCB illuminated next to oscilloscope waveforms"
+              alt="Quartz crystal under test on a Saunders & Associates 250B network analyzer"
               width={1920}
               height={1080}
               className="aspect-[4/3] w-full object-cover"
             />
-            <div className="absolute left-3 top-3 flex items-center gap-2 rounded-sm bg-background/70 px-2 py-1 backdrop-blur-sm">
+            <div className="absolute left-3 top-3 flex items-center gap-2 rounded-sm bg-background/85 px-2 py-1 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-primary blink" />
-              <span className="text-mono text-[10px] uppercase tracking-widest text-foreground">
-                live · vx-7204
+              <span className="text-mono text-[10px] uppercase tracking-widest text-primary">
+                live · 250B-2 capture
               </span>
             </div>
-            <div className="absolute bottom-3 right-3 rounded-sm bg-background/70 px-2 py-1 backdrop-blur-sm">
+            <div className="absolute bottom-3 right-3 rounded-sm bg-background/85 px-2 py-1 backdrop-blur-sm">
               <span className="text-mono text-[10px] tracking-widest text-primary">
-                CH1 · 1.024 GHz · 50Ω
+                15 kHz – 220 MHz · 50Ω
               </span>
             </div>
           </div>
@@ -127,13 +127,13 @@ function Hero() {
 
 function Specs() {
   const items = [
-    { k: "ISO 9001:2015", v: "Quality management certified" },
-    { k: "IPC-A-600 Class 3", v: "High-reliability electronics" },
-    { k: "RoHS · REACH", v: "Compliant materials" },
-    { k: "NIST traceable", v: "Calibration on every unit" },
+    { k: "Pioneered 1967", v: "First crystal impedance meters" },
+    { k: "PC-Based NA", v: "World's first crystal network analyzer card" },
+    { k: "Ion-Beam Tech", v: "In-house frequency adjustment systems" },
+    { k: "24/7 Production", v: "Trusted in demanding manufacturing" },
   ];
   return (
-    <section className="border-y border-border bg-secondary/20">
+    <section className="border-y border-border bg-secondary/40">
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-border md:grid-cols-4">
         {items.map((i) => (
           <div key={i.k} className="bg-background p-6">
@@ -152,24 +152,24 @@ function Products() {
   const products = [
     {
       img: scopeImg,
-      tag: "OSCILLOSCOPE",
-      name: "VX-7204 Series",
-      spec: "4 GHz · 12-bit · 16 ch logic",
-      desc: "Mixed-signal benchtop oscilloscope with HD capture and remote streaming.",
+      tag: "MEASUREMENT",
+      name: "250-Series Network Analyzers",
+      spec: "15 kHz – 900 MHz · PCIe",
+      desc: "The industry-standard PCIe network analyzer card for quartz crystal measurement. Models 250B-2, 250C-2, 250D-2.",
     },
     {
       img: pcbImg,
-      tag: "PCB FABRICATION",
-      name: "HDI Multilayer",
-      spec: "Up to 14 layers · 50µm trace",
-      desc: "Rigid, flex, and rigid-flex stack-ups for aerospace, medical, and telecom.",
+      tag: "AUTOMATIC TEST",
+      name: "W-Series Test Systems",
+      spec: "SMD pallet · blank sorting",
+      desc: "W-910A SMD crystal pallet test and W-940A blank sorter for high-volume production environments.",
     },
     {
       img: meterImg,
-      tag: "INSTRUMENTATION",
-      name: "Bench Suite Pro",
-      spec: "DMM · DC load · arb. waveform",
-      desc: "Stackable lab instruments with shared remote control and logging.",
+      tag: "TEMPERATURE TEST",
+      name: "W-5910 Dual-Channel TTS",
+      spec: "100% electronic switching",
+      desc: "Production-grade temperature test system with 10 ppb frequency resolution — the world's only fully electronic TTS.",
     },
   ];
   return (
@@ -179,8 +179,8 @@ function Products() {
           <div className="text-mono text-[10px] uppercase tracking-[0.25em] text-primary">
             // 02 · catalog
           </div>
-          <h2 className="text-display mt-2 text-4xl font-bold tracking-tight md:text-5xl">
-            What we manufacture
+          <h2 className="text-display mt-2 text-4xl font-bold tracking-tight text-primary md:text-5xl">
+            Built for the production floor
           </h2>
         </div>
         <Link
@@ -206,13 +206,13 @@ function Products() {
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <span className="text-mono absolute left-3 top-3 rounded-sm bg-background/70 px-2 py-1 text-[9px] uppercase tracking-[0.2em] text-primary backdrop-blur-sm">
+              <span className="text-mono absolute left-3 top-3 rounded-sm bg-background/85 px-2 py-1 text-[9px] uppercase tracking-[0.2em] text-primary backdrop-blur-sm">
                 {p.tag}
               </span>
             </div>
             <div className="p-6">
-              <h3 className="text-display text-xl font-bold">{p.name}</h3>
-              <div className="text-mono mt-1 text-[11px] uppercase tracking-widest text-primary">
+              <h3 className="text-display text-xl font-bold text-primary">{p.name}</h3>
+              <div className="text-mono mt-1 text-[11px] uppercase tracking-widest text-accent">
                 {p.spec}
               </div>
               <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>
@@ -226,19 +226,19 @@ function Products() {
 
 function Capabilities() {
   const caps = [
-    ["DESIGN", "DFM review, signal-integrity simulation, stack-up engineering."],
-    ["FABRICATION", "1–14 layer rigid, flex & rigid-flex. HDI, blind/buried vias, controlled impedance."],
-    ["ASSEMBLY", "SMT down to 01005, BGA rework, conformal coat, full turnkey."],
-    ["TEST & CAL", "AOI, X-ray, flying probe, NIST-traceable calibration on every instrument."],
+    ["MEASUREMENT", "PCIe network analyzers, crystal test fixtures, high-drive and low-frequency heads, multiple-unit controllers."],
+    ["FREQUENCY ADJUSTMENT", "In-house ion-beam systems delivering best-in-class throughput and adjustment accuracy."],
+    ["TEMPERATURE TEST", "Production TTS with 100% electronic switching and 10 ppb resolution since 1975 — still made today."],
+    ["AUTOMATIC TEST", "SMD pallet test, blank sorters, and integration with customer MES for 24/7 manufacturing."],
   ];
   return (
-    <section className="border-t border-border bg-secondary/10">
+    <section className="border-t border-border bg-secondary/40">
       <div className="mx-auto max-w-7xl px-6 py-24">
         <div className="text-mono text-[10px] uppercase tracking-[0.25em] text-primary">
           // 03 · capabilities
         </div>
-        <h2 className="text-display mt-2 max-w-2xl text-4xl font-bold tracking-tight md:text-5xl">
-          One facility. From schematic to shipped instrument.
+        <h2 className="text-display mt-2 max-w-2xl text-4xl font-bold tracking-tight text-primary md:text-5xl">
+          Test, adjust, and qualify — in one ecosystem.
         </h2>
         <div className="mt-12 grid gap-px bg-border md:grid-cols-2 lg:grid-cols-4">
           {caps.map(([k, v]) => (
@@ -262,18 +262,19 @@ function CTA() {
         <div className="panel scan rounded-md p-10 md:p-16">
           <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
             <div>
-              <h2 className="text-display text-3xl font-bold tracking-tight md:text-4xl">
-                Have a board to build or a signal to capture?
+              <h2 className="text-display text-3xl font-bold tracking-tight text-primary md:text-4xl">
+                Solving the crystal industry's hardest problems since 1967.
               </h2>
               <p className="mt-3 max-w-xl text-muted-foreground">
-                Send us your gerbers or your spec sheet — our engineers respond within one business day.
+                Tell us about your application — quartz, MEMs, ceramic resonators, or filters —
+                and our engineers will scope a system that fits your production line.
               </p>
             </div>
             <Link
               to="/contact"
               className="text-mono rounded-sm bg-primary px-6 py-4 text-xs uppercase tracking-widest text-primary-foreground transition-all hover:glow-signal"
             >
-              Start a project →
+              Contact S&amp;A →
             </Link>
           </div>
         </div>
