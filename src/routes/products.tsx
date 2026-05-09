@@ -8,16 +8,17 @@ import meterImg from "@/assets/product-meter.jpg";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — Voltrix Instruments & PCB" },
+      { title: "Products — Saunders & Associates" },
       {
         name: "description",
         content:
-          "Browse Voltrix oscilloscopes, signal generators, multimeters, and our multilayer PCB fabrication services.",
+          "S&A network analyzers, frequency adjustment systems, temperature test systems, automatic test systems, and crystal test fixtures.",
       },
-      { property: "og:title", content: "Products — Voltrix" },
+      { property: "og:title", content: "Products — Saunders & Associates" },
       {
         property: "og:description",
-        content: "Oscilloscopes, signal generators, multimeters, and PCB fabrication.",
+        content:
+          "Quartz crystal test and production equipment from Saunders & Associates, Phoenix AZ.",
       },
     ],
   }),
@@ -27,51 +28,75 @@ export const Route = createFileRoute("/products")({
 const catalog = [
   {
     img: scopeImg,
-    tag: "OSCILLOSCOPE",
-    sku: "VX-7204",
-    name: "Mixed-Signal Oscilloscope",
-    specs: ["4 GHz bandwidth", "12-bit ADC, 20 GS/s", "16 logic channels", "15.6\" HD touch"],
-    price: "from $14,200",
-  },
-  {
-    img: meterImg,
-    tag: "INSTRUMENTATION",
-    sku: "VX-3300",
-    name: "Bench Suite Pro",
-    specs: ["7½-digit DMM", "300W programmable DC load", "80 MHz arbitrary waveform gen.", "Shared LAN bus"],
-    price: "from $6,890",
-  },
-  {
-    img: pcbImg,
-    tag: "PCB FABRICATION",
-    sku: "FAB-HDI",
-    name: "HDI Multilayer Boards",
-    specs: ["1–14 layers, rigid/flex", "Min. 50µm trace/space", "Blind & buried vias", "Class 3 IPC-A-600"],
-    price: "quote per design",
+    tag: "MEASUREMENT",
+    sku: "250B-2",
+    name: "PCIe Network Analyzer · 15 kHz – 220 MHz",
+    specs: ["PCIe form factor", "15 kHz to 220 MHz range", "Industry-standard for crystal test", "Windows 11 supported"],
+    price: "Datasheet 6300425",
   },
   {
     img: scopeImg,
-    tag: "RF & MICROWAVE",
-    sku: "VX-9100",
-    name: "Spectrum Analyzer",
-    specs: ["9 kHz – 13.6 GHz", "−165 dBm DANL", "Real-time FFT", "Phase noise −110 dBc/Hz"],
-    price: "from $22,400",
+    tag: "MEASUREMENT",
+    sku: "250C-2",
+    name: "PCIe Network Analyzer · 15 kHz – 400 MHz",
+    specs: ["Extended frequency range", "PCIe interface", "OLE automation example pack", "Multi-unit controller compatible"],
+    price: "Datasheet 6300427",
   },
   {
-    img: meterImg,
-    tag: "POWER",
-    sku: "VX-2080",
-    name: "Programmable DC Supply",
-    specs: ["80V / 60A · 1.5kW", "0.03% load regulation", "OVP/OCP/OTP protection", "USB · LAN · GPIB"],
-    price: "from $3,450",
+    img: scopeImg,
+    tag: "MEASUREMENT",
+    sku: "250D-2",
+    name: "PCIe Network Analyzer · 15 kHz – 900 MHz",
+    specs: ["Highest range in the family", "PCIe interface", "Production-line proven", "Compatible with all S&A fixtures"],
+    price: "Datasheet 6300431",
   },
   {
     img: pcbImg,
-    tag: "PCB FABRICATION",
-    sku: "FAB-RFLEX",
-    name: "Rigid-Flex Assemblies",
-    specs: ["Up to 12 layers mixed", "Polyimide & FR4 hybrid", "Aerospace & medical grade", "Full turnkey assembly"],
-    price: "quote per design",
+    tag: "AUTOMATIC TEST",
+    sku: "W-910A",
+    name: "SMD Crystal Pallet Test System",
+    specs: ["High-volume SMD pallet test", "Configurable test sequences", "Production-line ready", "Integrates with 250-series"],
+    price: "Datasheet 6300367",
+  },
+  {
+    img: pcbImg,
+    tag: "AUTOMATIC TEST",
+    sku: "W-940A",
+    name: "Blank Sorter",
+    specs: ["Automated blank sorting", "Configurable bins", "High throughput", "Low-frequency heads supported"],
+    price: "Datasheet 6300392",
+  },
+  {
+    img: meterImg,
+    tag: "TEMPERATURE TEST",
+    sku: "W-5910",
+    name: "Dual-Channel Temperature Test System",
+    specs: ["100% electronic switching", "10 ppb frequency resolution", "Dual-channel throughput", "Production grade"],
+    price: "Datasheet 6300402",
+  },
+  {
+    img: meterImg,
+    tag: "TEMPERATURE TEST",
+    sku: "W-2220MR",
+    name: "Multi-Resonator Test Head",
+    specs: ["Multiple resonator types", "Single fixture footprint", "Watch crystal capable", "Drop-in replacement"],
+    price: "Datasheet 6300406",
+  },
+  {
+    img: pcbImg,
+    tag: "FIXTURES",
+    sku: "FX-50R",
+    name: "50 Ohm Reflection SMD Fixture",
+    specs: ["Optimized for SMD devices", "50 Ω reflection mode", "High-drive option available", "Pairs with 250-series"],
+    price: "Datasheet 6300434",
+  },
+  {
+    img: pcbImg,
+    tag: "FIXTURES",
+    sku: "FX-WTC",
+    name: "Low-Frequency / Watch Crystal Fixture",
+    specs: ["Tuning-fork compatible", "Low-frequency optimized", "32.768 kHz workflow", "OEM-proven design"],
+    price: "Datasheet 6300332",
   },
 ];
 
@@ -84,11 +109,12 @@ function ProductsPage() {
           <div className="text-mono text-[10px] uppercase tracking-[0.25em] text-primary">
             // catalog
           </div>
-          <h1 className="text-display mt-2 text-5xl font-bold tracking-tight md:text-6xl">
-            Instruments & boards
+          <h1 className="text-display mt-2 text-5xl font-bold tracking-tight text-primary md:text-6xl">
+            Quartz crystal test &amp; production
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Every Voltrix product is engineered, calibrated, and tested in our Fremont facility.
+            Every system is designed, manufactured, and supported from our Phoenix, Arizona
+            facility. Datasheet numbers correspond to S&amp;A document IDs.
           </p>
         </div>
       </section>
@@ -106,15 +132,15 @@ function ProductsPage() {
                   height={1024}
                   className="h-full w-full object-cover"
                 />
-                <span className="text-mono absolute left-3 top-3 rounded-sm bg-background/70 px-2 py-1 text-[9px] uppercase tracking-[0.2em] text-primary backdrop-blur-sm">
+                <span className="text-mono absolute left-3 top-3 rounded-sm bg-background/85 px-2 py-1 text-[9px] uppercase tracking-[0.2em] text-primary backdrop-blur-sm">
                   {p.tag}
                 </span>
-                <span className="text-mono absolute right-3 top-3 rounded-sm bg-background/70 px-2 py-1 text-[9px] tracking-widest text-muted-foreground backdrop-blur-sm">
+                <span className="text-mono absolute right-3 top-3 rounded-sm bg-background/85 px-2 py-1 text-[9px] tracking-widest text-muted-foreground backdrop-blur-sm">
                   {p.sku}
                 </span>
               </div>
               <div className="p-6">
-                <h2 className="text-display text-xl font-bold">{p.name}</h2>
+                <h2 className="text-display text-lg font-bold text-primary">{p.name}</h2>
                 <ul className="text-mono mt-3 space-y-1 text-[11px] tracking-wider text-muted-foreground">
                   {p.specs.map((s) => (
                     <li key={s} className="flex gap-2">
@@ -124,11 +150,11 @@ function ProductsPage() {
                   ))}
                 </ul>
                 <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
-                  <span className="text-mono text-[11px] uppercase tracking-widest text-primary">
+                  <span className="text-mono text-[10px] uppercase tracking-widest text-accent">
                     {p.price}
                   </span>
                   <button className="text-mono text-[10px] uppercase tracking-widest text-muted-foreground hover:text-primary">
-                    spec sheet →
+                    Request PDF →
                   </button>
                 </div>
               </div>
